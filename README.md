@@ -7,16 +7,16 @@ I've long had an obsession with the [USHCN dataset](http://cdiac.ornl.gov/epubs/
 The data currenty looks like:
 
 ```
-Variable 	  	Columns 	  	Type
-COOP ID 	  	1-6 	  	Character
-YEAR	 	  	7-10 	  	Integer
-MONTH 		  	11-12 	  	Integer
-ELEMENT 	  	13-16 	  	Character
-VALUE1 		  	17-21 	  	Integer
+Variable 	  	Columns	Type
+COOP ID 	  	1-6 	Character
+YEAR	 	  	7-10 	Integer
+MONTH 		  	11-12 	Integer
+ELEMENT 	  	13-16 	Character
+VALUE1 		  	17-21 	Integer
 MFLAG1 		  	22 	  	Character
 QFLAG1 		  	23 	  	Character
 SFLAG1 		  	24 	  	Character
-VALUE2 		  	25-29 	  	Integer
+VALUE2 		  	25-29 	Integer
 MFLAG2 		  	30 	  	Character
 QFLAG2 		  	31 	  	Character
 SFLAG2 		  	32 	  	Character
