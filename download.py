@@ -48,9 +48,12 @@ def build_download_paths(href_list, directory_path=USHCN_URL):
     return [directory_path + href for href in href_list]
 
 
-def save_all_state_files_locally():
-    """The one function to rule them all"""
-    files_to_download = build_download_paths(find_all_state_files(get_and_parse()))
+def main():
+    """Download, unzip and save state daily files locally.
+    """
+    state_daily_files = find_all_state_files(get_and_parse())
+    files_to_download = build_download_paths(state_daily_files)
     download_zipped_files(files_to_download)
 
-save_all_state_files_locally()
+if __name__ == "__main__":
+    main()
