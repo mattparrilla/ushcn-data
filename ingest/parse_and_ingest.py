@@ -1,7 +1,8 @@
-# import sqlite3
 import glob
+from database import ingest_month
 
 
+# TODO: should get list of text files from download, not by using glob
 def get_all_txt_files():
     return glob.glob('./source-data/*.txt')
 
@@ -16,7 +17,7 @@ def parse_line(line):
     month = line[10:12]
     line_constants = {
         'station_id': int(line[0:6]),
-        'element': line[12:16]
+        'metric': line[12:16]
     }
 
     monthly_readings = []
@@ -33,16 +34,9 @@ def parse_line(line):
     return monthly_readings
 
 
-def add_entry_to_db(line_values):
-    # TODO
-    return False
-
-
 def process_line(line):
     monthly_readings = parse_line(line)
-    for reading in monthly_readings:
-        print reading
-        add_entry_to_db(reading)
+    ingest_month(monthly_readings)
 
 
 def process_file(path):

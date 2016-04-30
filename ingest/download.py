@@ -21,6 +21,7 @@ def get_filename_from_path(path):
        http://cdiac.ornl.gov/ftp/ushcn_daily/state01_AL.txt.gz
     """
     f = path.split('/')[-1].split('.gz')[0]
+    # TODO: this should work relative to this file
     return 'source-data/%s' % f
 
 
@@ -48,12 +49,10 @@ def build_download_paths(href_list, directory_path=USHCN_URL):
     return [directory_path + href for href in href_list]
 
 
-def main():
+def download():
     """Download, unzip and save state daily files locally.
     """
     state_daily_files = find_all_state_files(get_and_parse())
     files_to_download = build_download_paths(state_daily_files)
     download_zipped_files(files_to_download)
-
-if __name__ == "__main__":
-    main()
+    # TODO: this should return the list of files
