@@ -51,4 +51,5 @@ def main():
 
 
 if __name__ == '__main__':
-    process_file(get_all_txt_files()[0])
+    for f in get_all_txt_files():
+        process_file(f)
